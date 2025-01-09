@@ -1,3 +1,16 @@
+
+Tool I like to use:
+1. SQL
+- DQL commands - ```SELECT``` including ```JOIN```
+- Different clauses ```GROUP BY, HAVING, WHERE, ORDER BY```
+- Subqueries
+- Createing and editing data ```CREATE TABLE``` and ```UPDATE SET```
+- Triggers and procedures ```CREATE TRIGGER``` and  ```CREATE PROCEDURE```
+2. Python
+- 
+4. Power BI
+
+
 Recent projects:
 1. SLA KPI Dashboard
 - Description: Data Stewards are doing data modification tasks from requestors who sents them to shared outlook mailbox, then they use they own category to take this email and do the task, they have two working days to complete each task.
@@ -18,5 +31,5 @@ Recent projects:
   - Reports were inconsistent when it comes to column names and schema, so names needed to be unified by python script using dictionary = {‘old name’: ‘new name’}, status column needed to be check file by file and data quality check process needed to be revised to be easy to measure.
   - Data was combined using python script and inserted into previously created SQL tables (functioning python script was done with help of AI tools). Script was designed to store already downloaded files and add new xlsx reports added to sharepoint, also data mapping was applied so SQL table will have always the same columns with no error.
  
-3. University project - python script **TO DO**
+3. University project - python script **TO DO - will be visible in Github**
 - 
