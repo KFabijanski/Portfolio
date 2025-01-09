@@ -6,17 +6,21 @@ I possess a solid understanding of SQL, familiarity with Power BI, and I am begi
 
 **Tools I like to use and my expertise level:**
 1. SQL
-- DQL commands - ```SELECT``` including ```JOIN```,
-- Different clauses ```GROUP BY, HAVING, WHERE, ORDER BY```,
-- Subqueries,
-- Createing and editing data ```CREATE TABLE``` and ```UPDATE SET``,
-- Triggers and procedures ```CREATE TRIGGER``` and  ```CREATE PROCEDURE```,
+- DQL (Data Query Language): Proficient in using ```SELECT``` statements, including complex queries with different types of ```JOIN``` (```INNER```, ```LEFT```, ```RIGHT```, ```FULL```).
+- Familiar with clauses like ``GROUP BY``, ``HAVING``, ``WHERE``, and ``ORDER BY`` for data aggregation and filtering.
+- Skilled in writing subqueries for advanced data retrieval and manipulation.
+- Experienced in creating and modifying database structures (```CREATE TABLE```, ```ALTER TABLE```) and updating data with ```UPDATE``` and ```SET``` statements.
+- Basic understanding of triggers (```CREATE TRIGGER```) and stored procedures (```CREATE PROCEDURE```) for automating database processes, with ongoing efforts to deepen knowledge in this area.
 2. Python
-- Basic understanding of python.
-- Still need to learn data science libraries like ```pandas``` and ```sqlalchemy```.
-- Starting to create scripts with help of AI tools,
+- Basic understanding of Python programming and its application to data processing and automation.
+- Initial experience in writing scripts to integrate and clean data from multiple sources, such as Excel files, with the support of AI tools.
+- Currently learning data science libraries such as ```pandas```, ```SQLAlchemy```, and ```NumPy``` to enhance data manipulation and analysis skills.
 3. Power BI
-- 
+- Creating dashboards and reports to visualize data, tailored to business requirements.
+- Data modelling: defining relationships between tables, setting up measures, calculated columns, and managing hierarchies.
+- Basic knowledge of DAX: creating measures and calculations (e.g., ```SUM, AVERAGE, COUNT, IF, CALCULATE```).
+- Integrating data from various sources, including Excel files, SQL databases, and cloud platforms.
+- defining relationships between tables, setting up measures, calculated columns, and managing hierarchies.
 
 **Recent projects:**
 1. SLA KPI Dashboard
