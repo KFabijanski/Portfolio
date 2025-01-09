@@ -5,13 +5,13 @@ This project contains code that has been prepared for public release. To protect
 - Private user or company data.
 - Sensitive environment configurations.
 
-Description: Data Stewards are doing data modification tasks from requestors who sents them to shared outlook mailbox, then they use they own category to take this email and do the task, they have two working days to complete each task.
+**Description:** Data Stewards are doing data modification tasks from requestors who sents them to shared outlook mailbox, then they use they own category to take this email and do the task, they have two working days to complete each task.
 
-Business objective: Create KPI PowerBI Dashboard which will show how many requests each employee made with classification by “done in time” and “done in more than 2 working days.”
+**Business objective:** Create KPI PowerBI Dashboard which will show how many requests each employee made with classification by “done in time” and “done in more than 2 working days.”
 
-Input: MSSQL Database which downloads emails data from Outlook mailbox
+**Input:** MSSQL Database which downloads emails data from Outlook mailbox
 
-Output: KPI PowerBI Dasboard
+**Output:** KPI PowerBI Dasboard
 
 ## SQL queries
 Data needed for report is in two tables, one contains emails from done folders and second one does outlook snapshot with all cases in progress (it's done every 20 mins). Dashboard needs to count number of deduplicated request so **creating new columns with max date over each converstation id** is needed. Below two queries used for PowerBI are shown.
