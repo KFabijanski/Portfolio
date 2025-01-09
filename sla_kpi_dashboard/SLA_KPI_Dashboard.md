@@ -27,7 +27,8 @@ ORDER BY loadt DESC
 
 PowerBI Inbox snap
 ```sql
-SELECT uid, subject,  rcvddt AS receivedate, cnv_topic, MAX(rcvddt) OVER (PARTITION BY cnv_id) AS conversationmaxdate, [from], path, cnv_id, loadt AS loadtime, cats
+SELECT uid, subject,  rcvddt AS receivedate, cnv_topic, MAX(rcvddt) OVER (PARTITION BY cnv_id) AS conversationmaxdate,
+[from], path, cnv_id, loadt AS loadtime, cats
 FROM [dbo].[reproting_inbox_snaps]
 WHERE loadt = (SELECT MAX(loadt) FROM [dbo].[reproting_inbox_snaps])
 ```
