@@ -22,7 +22,7 @@ SELECT uid, subject,  rcvddt AS receivedate, cnv_topic, MAX(rcvddt) OVER (PARTIT
 MAX(loadt) OVER (PARTITION BY cnv_id) AS loadmaxdate, [from], path, cnv_id, loadt AS loadtime, cats
 FROM [dbo].[reporting_processed_emails]
 WHERE [from] NOT LIKE 'datastewardsmailbox@mailbox.com'
-ORDER BY loadt DESC
+ORDER BY loadt DESC;
 ```
 
 PowerBI Inbox snap
@@ -30,7 +30,7 @@ PowerBI Inbox snap
 SELECT uid, subject,  rcvddt AS receivedate, cnv_topic, MAX(rcvddt) OVER (PARTITION BY cnv_id) AS conversationmaxdate,
 [from], path, cnv_id, loadt AS loadtime, cats
 FROM [dbo].[reproting_inbox_snaps]
-WHERE loadt = (SELECT MAX(loadt) FROM [dbo].[reproting_inbox_snaps])
+WHERE loadt = (SELECT MAX(loadt) FROM [dbo].[reporting_inbox_snaps]);
 ```
 Data is inserted into the SQL tables via a Python script. Categories need to directly reflect employee names; however, sometimes the SNOW category is used. Therefore, a trigger will be created to automate the cleaning process.
 
