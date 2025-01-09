@@ -5,7 +5,7 @@ This project contains code that has been prepared for public release. To protect
 - Private user or company data.
 - Sensitive environment configurations.
 
-**Description:** Data Stewards are doing data modification tasks from requestors who sents them to shared outlook mailbox, then they use they own category to take this email and do the task, they have two working days to complete each task.
+**Description:** Data Stewards are doing data modification tasks from requestors who sents them to shared outlook mailbox, then they use their own name's category to take this email and do the task, they have two working days to complete each task.
 
 **Business objective:** Create KPI PowerBI Dashboard which will show how many requests each employee made with classification by “done in time” and “done in more than 2 working days.”
 
