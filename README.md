@@ -1,4 +1,4 @@
-I am a Junior Data Steward currently pursuing a Master's degree in Managerial Studies, with a strong passion for data science and technology. My interests extend beyond my enthusiasm for automotive culture; I am also keen on the stock market and cryptocurrencies.
+I am a Data Steward currently pursuing a Master's degree in Managerial Studies, with a strong passion for data science and technology. My interests extend beyond my enthusiasm for automotive culture; I am also keen on the stock market and cryptocurrencies.
 
 After completing the Google Data Analytics Certificate, I discovered my fascination with data science, initially setting my sights on a data analyst role. However, my exploration of cloud computing and AWS during my coursework has inspired me to pursue a career as a Data Engineer.
 
