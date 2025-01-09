@@ -22,8 +22,9 @@ I possess a solid understanding of SQL, familiarity with Power BI, and I am begi
 - Integrating data from various sources, including Excel files, SQL databases, and cloud platforms.
 - defining relationships between tables, setting up measures, calculated columns, and managing hierarchies.
 
+
 **Recent projects:**
-1. SLA KPI Dashboard
+1. SLA KPI Dashboard - [SLA_KPI_Dashboard](main/SLA_KPI_Dashboard.md)
 - Description: Data Stewards are doing data modification tasks from requestors who sents them to shared outlook mailbox, then they use they own category to take this email and do the task, they have two working days to complete each task.
 - Business objective: Create KPI PowerBI Dashboard which will show how many requests each employee made with classification by “done in time” and “done in more than 2 working days.”
 -Input: MSSQL Database which downloads emails data from Outlook mailbox
