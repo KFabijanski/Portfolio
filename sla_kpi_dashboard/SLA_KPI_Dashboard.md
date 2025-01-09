@@ -21,7 +21,7 @@ PowerBI Processed emails
 SELECT uid, subject,  rcvddt AS receivedate, cnv_topic, MAX(rcvddt) OVER (PARTITION BY cnv_id) AS conversationmaxdate,
 MAX(loadt) OVER (PARTITION BY cnv_id) AS loadmaxdate, [from], path, cnv_id, loadt AS loadtime, cats
 FROM [dbo].[reporting_processed_emails]
-WHERE [from] NOT LIKE 'mailbox@mailbox.com'
+WHERE [from] NOT LIKE 'datastewardsmailbox@mailbox.com'
 ORDER BY loadt DESC
 ```
 
