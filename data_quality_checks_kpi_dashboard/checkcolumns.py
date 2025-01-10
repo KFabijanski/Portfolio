@@ -15,7 +15,8 @@ def count_columns_in_excel_files(folder_path):
     # Traversing through all files in the folder and subfolders.
     for root, dirs, files in os.walk(folder_path):
         for file in files:
-            if ('contacts' in file) and file.endswith('.xlsx') or file.endswith('.xls'):
+            if ('contacts' in file) and file.endswith('.xlsx') or file.endswith('.xls'): 
+                # Type the contacts or customers above in order to choose which type of reports you want to select.
                 file_path = os.path.join(root, file)
                 try:
                     # Reading an Excel file.
