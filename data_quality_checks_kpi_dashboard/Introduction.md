@@ -14,15 +14,11 @@ This project contains code that has been prepared for public release. To protect
 **Output:** SQL tables and PowerBI Dashboard.
 
 ## Data Processing
-A few scripts were used to clean inconsistent columns in excel files.
+A few scripts were used to clean inconsistent columns in excel files:
+- [checkcolumns.py](data_quality_checks_kpi_dashboard/checkcolumns.py) - used to search all unique columns in all excel files.
+- [combinedfile_creation.py](data_quality_checks_kpi_dashboard/combinedfile_creation.py) - used to combine file with all unique columns added - helpful to check what columns have the same data.
+- [updatecolumnsname.py](data_quality_checks_kpi_dashboard/updatecolumnsname.py) - changes columns based on dictionary (change old value to new value).
 
-[checkcolumns.py](data_quality_checks_kpi_dashboard/checkcolumns.py) - used to search all unique columns in all excel files.
-
-[combinedfile_creation.py](data_quality_checks_kpi_dashboard/combinedfile_creation.py) - used to combine file with all unique columns added - helpful to check what columns have the same data.
-
-[updatecolumnsname.py](data_quality_checks_kpi_dashboard/updatecolumnsname.py) - changes columns based on dictionary (change old value to new value).
-
-After data cleaning, the script for loading data into SQL and combining Excel files was created.
-
-[dataload_sql_xlsx]()
+After data cleaning, the script for loading data into SQL and combining Excel files was created.**
+- [dataload_sql_xlsx]() - saves already loaded files to not load it again.
 
