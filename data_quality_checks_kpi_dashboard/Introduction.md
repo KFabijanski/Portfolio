@@ -23,5 +23,6 @@ A few scripts were used to clean inconsistent columns in excel files.
 [updatecolumnsname.py](data_quality_checks_kpi_dashboard/updatecolumnsname.py) - changes columns based on dictionary (change old value to new value).
 
 After data cleaning, the script for loading data into SQL and combining Excel files was created.
+
 [dataload_sql_xlsx]()
 
