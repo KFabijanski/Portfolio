@@ -24,7 +24,7 @@ I possess a solid understanding of SQL, familiarity with Power BI, and I am begi
 
 
 **Recent projects:**
-1. SLA KPI Dashboard - [SLA_KPI_Dashboard](sla_kpi_dashboard/SLA_KPI_Dashboard.md)
+1. SLA KPI Dashboard - [here](sla_kpi_dashboard/SLA_KPI_Dashboard.md)
 - Description: Data Stewards are doing data modification tasks from requestors who sents them to shared outlook mailbox, then they use they own category to take this email and do the task, they have two working days to complete each task.
 - Business objective: Create KPI PowerBI Dashboard which will show how many requests each employee made with classification by “done in time” and “done in more than 2 working days.”
 -Input: MSSQL Database which downloads emails data from Outlook mailbox
@@ -34,7 +34,7 @@ I possess a solid understanding of SQL, familiarity with Power BI, and I am begi
   - Emails needed to be deduplicated in source data because PowerBI removes duplicate per every date not from whole dataset so it needed to be modified by creating receivedmaxdate column in SQL ```MAX(rcvddt) OVER (PARTITION BY cnv_topic)```.
   - Sales organizations were defined by creating groups of different paths, SLA measurement and table join were made with DAX.
 
-2. Data Quality Checks KPI Dashboard:
+2. Data Quality Checks KPI Dashboard - [here](data_quality_checks_kpi_dashboard/Introduction.md):
 - Description: Users are creating prospect accounts and contacts in SAP system. Data Stewards are getting excel report with newly generated prospects and contacts and they’re checking if users didn’t make any duplicates.
 - Business objective: Create KPI PowerBI Dashboard which will show how many accounts/contacts were made by each user but most important, how many were incorrect.
 - Input: Sharepoint with multiple xlsx files (reports with feedback from Data Stewards).
