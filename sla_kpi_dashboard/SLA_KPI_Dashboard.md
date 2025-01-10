@@ -14,7 +14,32 @@ This project contains code that has been prepared for public release. To protect
 **Output:** KPI PowerBI Dasboard
 
 ## SQL queries
-Data needed for report is in two tables, one contains emails from done folders and second one does outlook snapshot with all cases in progress (it's done every 20 mins). Dashboard needs to count number of deduplicated request so **creating new columns with max date over each converstation id** is needed. Below two queries used for PowerBI are shown.
+Data needed for report is in two tables, one contains emails from done folders and second one does outlook snapshot with all cases in progress (it's done every 20 mins). 
+
+Cats data cleaning was processed using REPLACE() function:
+```sql
+UPDATE [dbo].[reporting_processed_emails]
+SET cats = REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(
+    cats,
+    'CCT, ', ''),
+    'CRM, ', ''),
+    'SNOW, ', ''),
+    ', SNOW', ''),
+    ', CRM', ''),
+    ', CCT', ''),
+    'CCT', ''),
+    'SNOW', ''),
+    'CRM', ''),
+    '', ''),
+    'Magda S-K', 'DS Magda S'),
+    'FINANCE, ', ''),
+    'BVT Testing, ', ''),
+	'FINANCE', ''),
+	'mass', ''),
+	', FINANCE', ''),
+	'On hold', ''),
+	'Waiting for an answer, ', '');
+```
 
 PowerBI Processed emails
 ```sql
@@ -24,21 +49,68 @@ FROM [dbo].[reporting_processed_emails]
 WHERE [from] NOT LIKE 'datastewardsmailbox@mailbox.com'
 ORDER BY loadt DESC;
 ```
+Dashboard needs to count number of deduplicated request so **creating new columns with max date over each converstation id** is needed. Below two queries used for PowerBI are shown.
 
 PowerBI Inbox snap
 ```sql
 SELECT uid, subject,  rcvddt AS receivedate, cnv_topic, MAX(rcvddt) OVER (PARTITION BY cnv_id) AS conversationmaxdate,
 [from], path, cnv_id, loadt AS loadtime, cats
-FROM [dbo].[reproting_inbox_snaps]
+FROM [dbo].[reporting_inbox_snaps]
 WHERE loadt = (SELECT MAX(loadt) FROM [dbo].[reporting_inbox_snaps]);
 ```
 Data is inserted into the SQL tables via a Python script. Categories need to directly reflect employee names; however, sometimes the SNOW category is used. Therefore, a trigger will be created to automate the cleaning process.
 
+TRIGGER [dbo].[reproting_inbox_snaps]
 ```sql
-TRIGGER TO BE DONE
+CREATE TRIGGER reproting_inbox_snaps_clean
+ON [dbo].[reproting_inbox_snaps]
+AFTER INSERT
+AS
+BEGIN
+	UPDATE [dbo].[reproting_inbox_snaps]
+	SET cats = REPLACE(REPLACE(REPLACE(REPLACE(
+		cats,
+		'CCT, ', ''),
+		', CCT',''),
+		'SNOW, ',''),
+		', SNOW','')
+	WHERE uid IN (SELECT uid FROM Inserted);
+END;
+```
+TRIGGER [dbo].[reproting_processed_emails]
+```sql
+CREATE TRIGGER reporting_processed_emails_clean
+ON [dbo].[reproting_processed_emails]
+AFTER INSERT
+AS
+BEGIN
+	UPDATE [dbo].[reproting_processed_emails]
+	SET cats = REPLACE(REPLACE(REPLACE(REPLACE(
+		cats,
+		'CCT, ', ''),
+		', CCT',''),
+		'SNOW, ',''),
+		', SNOW','')
+	WHERE uid IN (SELECT uid FROM Inserted);
+END;
 ```
 
+TRIGGER CHECK
+```sql
+SELECT 
+    t.name AS TriggerName,
+    OBJECT_NAME(t.parent_id) AS TableName,
+    t.type_desc AS TriggerType,
+    t.create_date,
+    t.modify_date
+FROM 
+    sys.triggers t
+ORDER BY 
+    TableName, TriggerName;
+```
 ## PowerBI
+
+
 
 ## Final Dashboard:
 ![Dashboard_blurred](https://github.com/user-attachments/assets/d645e672-6fa4-4611-adc1-a3c6d234e8a8)
