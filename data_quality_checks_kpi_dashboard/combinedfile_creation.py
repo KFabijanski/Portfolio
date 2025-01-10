@@ -19,7 +19,7 @@ for dirpath, dirnames, filenames in os.walk(folder_path):
                 df = pd.read_excel(file_path)
                 dataframes.append(df)
             except Exception as e:
-                print(f"Nie udało się wczytać pliku {filename}: {e}")
+                print(f"Failed to load a file {filename}: {e}")
 
 # Consolidation of data into a single DataFrame
 if dataframes:
@@ -30,6 +30,6 @@ if dataframes:
     output_file_path = os.path.join(folder_path, "combined_contacts.xlsx")
     combined_df.to_excel(output_file_path, index=False)
 
-    print(f"Dane zostały skondensowane i zapisane w pliku: {output_file_path}")
+    print(f"The data has been compressed and saved in a file: {output_file_path}")
 else:
-    print("Nie znaleziono żadnych plików z danymi do połączenia.")
+    print("No data files for connection were found.")
