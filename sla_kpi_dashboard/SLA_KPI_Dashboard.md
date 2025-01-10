@@ -34,11 +34,11 @@ SET cats = REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLA
     'Magda S-K', 'DS Magda S'),
     'FINANCE, ', ''),
     'BVT Testing, ', ''),
-	'FINANCE', ''),
-	'mass', ''),
-	', FINANCE', ''),
-	'On hold', ''),
-	'Waiting for an answer, ', '');
+    'FINANCE', ''),
+    'mass', ''),
+    ', FINANCE', ''),
+    'On hold', ''),
+    'Waiting for an answer, ', '');
 ```
 
 PowerBI Processed emails
@@ -109,8 +109,70 @@ ORDER BY
     TableName, TriggerName;
 ```
 ## PowerBI
+Creating combined table in DAX which will be used to track done and in progress tasks.
+```DAX
+CombinedCustomerInboxTable = UNION(
+    SELECTCOLUMNS(
+        Processed,
+        "uid", Processed[uid],
+        "subject", Processed[subject],
+        "receivedate", Processed[receivedate],
+        "cnv_topic", Processed[cnv_topic],
+        "conversationmaxdate", Processed[conversationmaxdate],
+        "from", Processed[from],
+        "path", Processed[path],
+        "cnv_id", Processed[cnv_id],
+        "loadtime", Processed[loadtime],
+        "cats", Processed[cats]
+    ),
+    SELECTCOLUMNS(
+        Inbox_snaps,
+        "uid", Inbox_snaps[uid],
+        "subject", Inbox_snaps[subject],
+        "receivedate", Inbox_snaps[receivedate],
+        "cnv_topic", Inbox_snaps[cnv_topic],
+        "conversationmaxdate", Inbox_snaps[conversationmaxdate],
+        "from", Inbox_snaps[from],
+        "path", Inbox_snaps[path],
+        "cnv_id", Inbox_snaps[cnv_id],
+        "loadtime", Inbox_snaps[loadtime],
+        "cats", Inbox_snaps[cats]
+    )
+)
+```
+Sales_unit and Staus values were made using grouping path
 
+Task type shows if task was a customer creation or customer change - logic points types of words used in creation forms and the rest is classified as change.
+```DAX
+Task type = IF(CONTAINSSTRING(CombinedCustomerInboxTable[subject], "New Material")
+||CONTAINSSTRING(CombinedCustomerInboxTable[subject],"Creation")
+||CONTAINSSTRING(CombinedCustomerInboxTable[subject],"New Customer")
+||CONTAINSSTRING(CombinedCustomerInboxTable[subject],"MT.com Request")
+||CONTAINSSTRING(CombinedCustomerInboxTable[subject],"GNF Routed")
+||CONTAINSSTRING(CombinedCustomerInboxTable[subject],"MT.com Anfrage"),"Creation","Change")
+```
 
+SLA is measured in 3 steps, employee needs to do a task within two working days.
+SLA_1 - calculates the number of working days between the maximum conversation date and the maximum load date, excluding the start date.
+```DAX
+C_SLA = NETWORKDAYS(Processed[conversationmaxdate],Processed[loadmaxdate])-1
+```
+SLA_1.5 - adds exceptions, if subject contains any of those works they are automatically assignned as 1.
+```DAX
+C_SLA1.5 = if(CONTAINSSTRING(Processed[subject],"archive")
+|| CONTAINSSTRING(Processed[subject],"archiving")
+|| CONTAINSSTRING(Processed[subject],"I-Base")
+|| CONTAINSSTRING(Processed[subject],"Change later")
+|| CONTAINSSTRING(Processed[subject],"inactivation")
+|| CONTAINSSTRING(Processed[subject],"merge")
+|| CONTAINSSTRING(Processed[subject],"block")
+|| CONTAINSSTRING(Processed[subject],"duplicate"),1,NETWORKDAYS(Processed[conversationmaxdate],Processed[loadmaxdate])-1)
+```
+SLA_2 - labels data with two categories "<=2wD" and ">2wD".
+```DAX
+C_SLA2 = IF(Processed[C_SLA1.5]<3,"<=2wD",">2wD")
+```
 
 ## Final Dashboard:
+For sensitive data reasons, whole dashboard cannot be shown but below is one of pages with blurred data.
 ![Dashboard_blurred](https://github.com/user-attachments/assets/d645e672-6fa4-4611-adc1-a3c6d234e8a8)
