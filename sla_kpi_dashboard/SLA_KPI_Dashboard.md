@@ -60,14 +60,14 @@ WHERE loadt = (SELECT MAX(loadt) FROM [dbo].[reporting_inbox_snaps]);
 ```
 Data is inserted into the SQL tables via a Python script. Categories need to directly reflect employee names; however, sometimes the SNOW category is used. Therefore, a trigger will be created to automate the cleaning process.
 
-TRIGGER [dbo].[reproting_inbox_snaps]
+TRIGGER [dbo].[reporting_inbox_snaps]
 ```sql
-CREATE TRIGGER reproting_inbox_snaps_clean
-ON [dbo].[reproting_inbox_snaps]
+CREATE TRIGGER reporting_inbox_snaps_clean
+ON [dbo].[reporting_inbox_snaps]
 AFTER INSERT
 AS
 BEGIN
-	UPDATE [dbo].[reproting_inbox_snaps]
+	UPDATE [dbo].[reporting_inbox_snaps]
 	SET cats = REPLACE(REPLACE(REPLACE(REPLACE(
 		cats,
 		'CCT, ', ''),
@@ -77,14 +77,14 @@ BEGIN
 	WHERE uid IN (SELECT uid FROM Inserted);
 END;
 ```
-TRIGGER [dbo].[reproting_processed_emails]
+TRIGGER [dbo].[reporting_processed_emails]
 ```sql
 CREATE TRIGGER reporting_processed_emails_clean
-ON [dbo].[reproting_processed_emails]
+ON [dbo].[reporting_processed_emails]
 AFTER INSERT
 AS
 BEGIN
-	UPDATE [dbo].[reproting_processed_emails]
+	UPDATE [dbo].[reporting_processed_emails]
 	SET cats = REPLACE(REPLACE(REPLACE(REPLACE(
 		cats,
 		'CCT, ', ''),
