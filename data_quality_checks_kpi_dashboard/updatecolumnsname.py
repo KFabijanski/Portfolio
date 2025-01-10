@@ -9,34 +9,38 @@ import os
 import pandas as pd
 
 def rename_columns_in_excel_files(folder_path):
-    # Przechodzimy przez wszystkie pliki w folderze i podfolderach
+    # Go through all the files in the folder and subfolders
     for root, _, files in os.walk(folder_path):
         for file in files:
             if ('contacts' in file) and file.endswith('.xlsx') or file.endswith('.xls'):
+                # Type the contacts or customers above in order to choose which type of reports you want to select
                 file_path = os.path.join(root, file)
                 try:
-                    # Odczytujemy plik Excel
+                    # Load an Excel file
                     df = pd.read_excel(file_path)
                     
-                    # Sprawdź istniejące kolumny
+                    # CHeck existing columns
                     print(f'Kolumny w pliku {file_path}: {df.columns.tolist()}')
 
-                    # Definiujemy słownik z kolumnami do zmiany
+                    # Dictionary with names to change
                     columns_to_rename = {
-                        'Customer - ID.1': 'Customer name',
+                        'old_column_1': 'new_column_1',
+                        'old_column_2': 'new_column_2',
+                        'old_column_3': 'new_column_3',
+                        'old_column_4': 'new_column_4',
                     }
 
-                    # Sprawdzamy, które kolumny istnieją i zmieniamy ich nazwy
+                    # Check which columns exist and rename them
                     existing_columns = {col: columns_to_rename[col] for col in columns_to_rename if col in df.columns}
                     print(f'Istniejące kolumny do zmiany w pliku {file_path}: {existing_columns}')
                     if existing_columns:
                         df.rename(columns=existing_columns, inplace=True)
-                        # Zapisujemy zmodyfikowany plik
+                        # Save modified file
                         df.to_excel(file_path, index=False)
-                        print(f'Zmieniono kolumny w pliku: {file_path}')
+                        print(f'Columns changed in file: {file_path}')
                 except Exception as e:
-                    print(f'Błąd przy przetwarzaniu pliku {file_path}: {e}')
+                    print(f'Error while processing the file {file_path}: {e}')
 
-# Podaj ścieżkę do folderu
-folder_path = r"C:\Users\fabijans-1\OneDrive - Mettler Toledo LLC\All units task list\Data Quality\Weekly checks\Archive"
+# Folder path
+folder_path = r"folderpath"
 rename_columns_in_excel_files(folder_path)
