@@ -24,11 +24,11 @@ def count_columns_in_excel_files(folder_path):
                     # Counting columns.
                     column_counter.update(df.columns)
                 except Exception as e:
-                    print(f'Nie można odczytać pliku {file_path}: {e}')
+                    print(f'Failed to load a file {file_path}: {e}')
 
     # Displaying results.
     for column, count in column_counter.items():
-        print(f"{column} - ilość: {count}")
+        print(f"{column} - count: {count}")
 
 # Set the path to the folder with Excel files.
 folder_path = r"folderpathwithfiles"
