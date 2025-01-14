@@ -58,7 +58,7 @@ SELECT uid, subject,  rcvddt AS receivedate, cnv_topic, MAX(rcvddt) OVER (PARTIT
 FROM [dbo].[reporting_inbox_snaps]
 WHERE loadt = (SELECT MAX(loadt) FROM [dbo].[reporting_inbox_snaps]);
 ```
-Data is inserted into the SQL tables via a Python script. Categories need to directly reflect employee names; however, sometimes the SNOW category is used. Therefore, a trigger will be created to automate the cleaning process.
+Data is inserted into the SQL tables via a Python script. Categories need to directly reflect employee names; however, sometimes the SNOW and CCT category is used next to name. Therefore, a trigger will be created to automate the cleaning process.
 
 TRIGGER [dbo].[reporting_inbox_snaps]
 ```sql
