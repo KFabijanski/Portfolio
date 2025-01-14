@@ -40,6 +40,7 @@ SET cats = REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLA
     'On hold', ''),
     'Waiting for an answer, ', '');
 ```
+Dashboard needs to count number of deduplicated request so **creating new columns with max date over each converstation id** is needed. Below two queries used for PowerBI are shown.
 
 PowerBI Processed emails
 ```sql
@@ -49,7 +50,6 @@ FROM [dbo].[reporting_processed_emails]
 WHERE [from] NOT LIKE 'datastewardsmailbox@mailbox.com'
 ORDER BY loadt DESC;
 ```
-Dashboard needs to count number of deduplicated request so **creating new columns with max date over each converstation id** is needed. Below two queries used for PowerBI are shown.
 
 PowerBI Inbox snap
 ```sql
