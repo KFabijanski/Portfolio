@@ -43,5 +43,5 @@ I possess a solid understanding of SQL, familiarity with Power BI, and I am begi
   - Reports were inconsistent when it comes to column names and schema, so names needed to be unified by python script using dictionary = {‘old name’: ‘new name’}, status column needed to be check file by file and data quality check process needed to be revised to be easy to measure.
   - Data was combined using python script and inserted into previously created SQL tables (functioning python script was done with help of AI tools). Script was designed to store already downloaded files and add new xlsx reports added to sharepoint, also data mapping was applied so SQL table will have always the same columns with no error.
  
-3. University project - Binary options python script **Polish version**
+3. University project - Binary options python script **Polish version** [here](homework.py):
 - Description: A short program that simulates binary options. There's a fictional stock that can increase or decrease its price randomly, and the player needs to guess whether it will go down or up. If the player is right, they win their deposit; if the player is wrong, they lose their deposit. The player chooses whether they want to continue the game or close it. They can also see their statistics and charts about the deposit size over whole game.
