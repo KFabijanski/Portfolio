@@ -15,12 +15,12 @@ This project contains code that has been prepared for public release. To protect
 
 ## Data Processing
 A few scripts were used to clean inconsistent columns in excel files:
-- [checkcolumns.py](data_quality_checks_kpi_dashboard/checkcolumns.py) - used to search all unique columns in all excel files.
-- [combinedfile_creation.py](data_quality_checks_kpi_dashboard/combinedfile_creation.py) - used to combine file with all unique columns added - helpful to check what columns have the same data.
-- [updatecolumnsname.py](data_quality_checks_kpi_dashboard/updatecolumnsname.py) - changes columns based on dictionary (change old value to new value).
+- [checkcolumns.py](checkcolumns.py) - used to search all unique columns in all excel files.
+- [combinedfile_creation.py](combinedfile_creation.py) - used to combine file with all unique columns added - helpful to check what columns have the same data.
+- [updatecolumnsname.py](updatecolumnsname.py) - changes columns based on dictionary (change old value to new value).
 
 After data cleaning, the script for combining Excel files was created.**
-- [dataload.py](updatecolumnsname.py) - combines all excel files into one file with selected columns.
+- [dataload.py](dataload.py) - combines all excel files into one file with selected columns.
 
 ## PowerBI
 One example of page of this report:
