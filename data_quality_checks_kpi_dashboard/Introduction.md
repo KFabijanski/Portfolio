@@ -11,7 +11,7 @@ This project contains code that has been prepared for public release. To protect
 
 **Input:** Sharepoint with multiple xlsx files (reports with feedback from Data Stewards).
 
-**Output:** SQL tables and PowerBI Dashboard.
+**Output:** Combined xlsx data source and PowerBI Dashboard.
 
 ## Data Processing
 A few scripts were used to clean inconsistent columns in excel files:
@@ -20,7 +20,7 @@ A few scripts were used to clean inconsistent columns in excel files:
 - [updatecolumnsname.py](data_quality_checks_kpi_dashboard/updatecolumnsname.py) - changes columns based on dictionary (change old value to new value).
 
 After data cleaning, the script for combining Excel files was created.**
-- [dataload_sql_xlsx]() - combines all excel files into one file with selected columns.
+- [dataload]() - combines all excel files into one file with selected columns.
 
 ## PowerBI
 One example of page of this report:
