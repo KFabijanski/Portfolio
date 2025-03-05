@@ -20,7 +20,7 @@ A few scripts were used to clean inconsistent columns in excel files:
 - [updatecolumnsname.py](data_quality_checks_kpi_dashboard/updatecolumnsname.py) - changes columns based on dictionary (change old value to new value).
 
 After data cleaning, the script for combining Excel files was created.**
-- [dataload](data_quality_checks_kpi_dashboard/dataload.py) - combines all excel files into one file with selected columns.
+- [dataload.py](data_quality_checks_kpi_dashboard/updatecolumnsname.py) - combines all excel files into one file with selected columns.
 
 ## PowerBI
 One example of page of this report:
