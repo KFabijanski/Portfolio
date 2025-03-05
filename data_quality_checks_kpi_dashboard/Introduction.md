@@ -19,9 +19,12 @@ A few scripts were used to clean inconsistent columns in excel files:
 - [combinedfile_creation.py](data_quality_checks_kpi_dashboard/combinedfile_creation.py) - used to combine file with all unique columns added - helpful to check what columns have the same data.
 - [updatecolumnsname.py](data_quality_checks_kpi_dashboard/updatecolumnsname.py) - changes columns based on dictionary (change old value to new value).
 
-After data cleaning, the script for loading data into SQL and combining Excel files was created.**
-- [dataload_sql_xlsx]() - saves already loaded files to not load it again. (IN PROCESS)
+After data cleaning, the script for combining Excel files was created.**
+- [dataload_sql_xlsx]() - combines all excel files into one file with selected columns.
 
 ## PowerBI
+One example of page of this report:
+<img width="596" alt="image" src="https://github.com/user-attachments/assets/db11cd8b-1f86-44a6-b82c-916dfc2b64d0" />
+
 
 
