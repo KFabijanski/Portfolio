@@ -11,7 +11,7 @@ EXCLUDED_ROW_PREFIXES = (
     "Data extract produced by",
 )
 
-# Ustaw to jawnie jeśli slashowe daty są w formacie:
+# Set this explicitly when slash-formatted dates are used:
 # "mdy" -> 03/01/2025 = Mar 1, 2025
 # "dmy" -> 03/01/2025 = 3 Jan 2025
 SLASH_DATE_ORDER = "mdy"
