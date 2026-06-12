@@ -1,27 +1,49 @@
-I am a Data Steward currently pursuing a Master's degree in Managerial Studies, with a strong passion for data science and technology. My interests extend beyond my enthusiasm for automotive culture; I am also keen on the stock market and cryptocurrencies.
+I am a Reporting Specialist / BI Developer working with ThoughtSpot and Google Cloud Platform, focused on building and maintaining end-to-end data solutions for business users.
 
-After completing the Google Data Analytics Certificate, I discovered my fascination with data science, initially setting my sights on a data analyst role. However, my exploration of cloud computing and AWS during my coursework has inspired me to pursue a career as a Data Engineer.
+In my current role, I operate as a full owner of the analytics layer — from data sourcing and transformation in BigQuery, through modeling and liveboards in ThoughtSpot, to supporting business users and resolving data quality issues. I work closely with stakeholders to ensure data consistency, troubleshoot discrepancies, and maintain trust in reporting.
 
-I possess a solid understanding of SQL, familiarity with Power BI, and I am beginning my journey in Python programming. Additionally, I have foundational knowledge of various AWS services, including EC2, S3, DynamoDB, and RDS. In 2025, I am eager to secure a position that allows me to deepen my expertise and expand my knowledge in the data science field, propelling my career to new heights.
+I have hands-on experience with GCP, primarily BigQuery, where I create and maintain views used for analytics. I also contribute to maintaining internal data tooling (cdp-tool), including debugging Cloud Build issues, managing upgrades, and supporting deployment processes. Additionally, I have worked with Terraform (e.g., creating storage buckets), service accounts, and basic cloud security practices such as key rotation.
 
-**Tools I like to use and my expertise level:**
+My work includes exposure to orchestration tools like Airflow (DAG-based transformations), as well as building lightweight automation solutions using Python and Power Automate to improve data validation and reporting workflows.
+
+On the frontend side, I design and manage ThoughtSpot models, worksheets, and liveboards, often integrating multiple data sources and implementing row-level security (RLS). I also built a custom internal web application using JavaScript to embed and visualize ThoughtSpot data in alternative formats (Echarts - Race charts).
+
+**Tech Stack & Skills:**
 1. SQL
-- DQL (Data Query Language): Proficient in using ```SELECT``` statements, including complex queries with different types of ```JOIN``` (```INNER```, ```LEFT```, ```RIGHT```, ```FULL```).
-- Familiar with clauses like ``GROUP BY``, ``HAVING``, ``WHERE``, and ``ORDER BY`` for data aggregation and filtering.
-- Skilled in writing subqueries for advanced data retrieval and manipulation.
-- Experienced in creating and modifying database structures (```CREATE TABLE```, ```ALTER TABLE```) and updating data with ```UPDATE``` and ```SET``` statements.
-- Basic understanding of triggers (```CREATE TRIGGER```) and stored procedures (```CREATE PROCEDURE```) for automating database processes, with ongoing efforts to deepen knowledge in this area.
-2. Python
-- Basic understanding of Python programming and its application to data processing and automation.
-- Initial experience in writing scripts to integrate and clean data from multiple sources, such as Excel files, with the support of AI tools.
-- Currently learning data science libraries such as ```pandas```, ```SQLAlchemy```, and ```NumPy``` to enhance data manipulation and analysis skills.
-3. Power BI
-- Creating dashboards and reports to visualize data, tailored to business requirements.
-- Data modelling: defining relationships between tables, setting up measures, calculated columns, and managing hierarchies.
-- Basic knowledge of DAX: creating measures and calculations (e.g., ```SUM, AVERAGE, COUNT, IF, CALCULATE```).
-- Integrating data from various sources, including Excel files, SQL databases, and cloud platforms.
-- defining relationships between tables, setting up measures, calculated columns, and managing hierarchies.
+- Advanced querying (CTEs, joins, aggregations)
+- Working with large-scale datasets (millions of records, GB-scale queries)
+- Data transformation using BigQuery views
+- Basic exposure to window functions
+2. GCP
+- BigQuery (core data layer)
+- Cloud Build (CI/CD troubleshooting and maintenance)
+- Terraform (basic infrastructure setup)
+- Service accounts and access management
+3. ThoughtSpot
+- Data modeling (worksheets, joins, relationships)
+- Liveboard and dashboard development
+- Row-level security (RLS) implementation
+- Data validation and troubleshooting with business users
+4. Python
+- Basic automation and data validation scripts
+- Data comparison and QA support tools
+- Working with Excel-based data pipelines
+5. Additional
+- Airflow (basic DAG-based transformations)
+- Power Automate (workflow automation)
+- Other BI Tools: Power BI(proven experience), Tableu and Looker (used at trainings)
+- AWS (used at trainings)
+- JavaScript (internal data visualization tool using embedded analytics and ECharts)
+6. Additional BI Tools
+- Power BI (hands-on experience in dashboarding and data modeling)
+- Tableau, Looker (basic familiarity)
+7. Cloud & Data Platforms
+- GCP (primary environment – BigQuery, Cloud Build, IAM)
+- Oracle (legacy system support, data removal and maintenance tasks)
+- MSSQL (hands-on experience)
+- AWS (basic familiarity)
 
+I am currently focused on transitioning into a Data Engineer role, with a strong interest in building scalable data pipelines, improving data infrastructure, and working more deeply with cloud-based data processing.
 
 **Recent projects:**
 1. SLA KPI Dashboard - [here](sla_kpi_dashboard/SLA_KPI_Dashboard.md):
