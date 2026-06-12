@@ -14,7 +14,7 @@ EXCLUDED_ROW_PREFIXES = (
 def normalize_date_token(token):
     token = token.strip()
 
-    # dopasowanie tylko formatów dat, bez ruszania zwykłego tekstu
+    # Align only date formats, without modifying plain text
     formats = [
         "%d.%m.%Y",
         "%m/%d/%Y",
@@ -54,7 +54,7 @@ def normalize_value(value):
     if value is None:
         return ""
 
-    # prawdziwa data / datetime z openpyxl
+    # Actual date/datetime value recognized by openpyxl
     if isinstance(value, (datetime, date)):
         return value.strftime("%Y-%m-%d")
 
@@ -84,7 +84,7 @@ def is_ignored_row(row_values):
     non_empty = [v for v in row_values if v != ""]
 
     if not non_empty:
-        return True  # całkiem pusty wiersz
+        return True  # completely empty cell
 
     first = str(non_empty[0]).strip()
 
